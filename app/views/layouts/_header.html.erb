@@ -1,0 +1,35 @@
+<!-- HEADER  -->
+<header class="main-header">
+	<div class="container">
+		<div class="logo">
+      <%= link_to image_tag("logo.png", alt: "logo"), root_path, class: "animsition-link" %>
+		</div>
+
+		<div class="menu">
+			<!-- desktop navbar -->
+			<nav class="desktop-nav">
+				<ul class="first-level">
+          <li><%= link_to "Home", root_path, class: "animsition-link" %></li>
+          <li><%= link_to "about us", welcome_about_path, class: "animsition-link" %></li>
+					<li><a href="">directory</a>
+						<ul class="second-level">
+							<li><a href="portfolio-1.html" class="animsition-link">category name </a></li>
+							<li><a href="single-project.html" class="animsition-link">category name </a></li>
+							<li><a href="single-project-2.html" class="animsition-link">category name </a></li>
+							<li><a href="single-project-2.html" class="animsition-link">category name </a></li>
+							<li><a href="single-project-2.html" class="animsition-link">category name </a></li>
+							<li><a href="single-project-2.html" class="animsition-link">category name </a></li>
+						</ul>
+					</li>						
+				</ul>
+			</nav>
+			<!-- mobile navbar -->
+			<nav class="mobile-nav"></nav>
+			<div class="menu-icon">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+		</div>
+	</div>
+</header>
