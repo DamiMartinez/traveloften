@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'blogs#index'
+  # get '/blogs/:title', to: 'blogs#show'
+  get '/blogs/:category/:title', to: 'blogs#show'
 
   get 'welcome/about', to:'welcome#about' 
 

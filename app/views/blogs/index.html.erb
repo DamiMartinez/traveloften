@@ -1,0 +1,184 @@
+<%= render "/welcome/landing" %>
+<div class="col-md-6 col-sm-12 services-left wow fadeInUp">
+				<div class="row" style="margin-bottom:50px">
+					<div class="col-md-6 col-sm-12">
+						<div class="row">
+							<!-- <img class="icon-top-directory" src="assets/img/icon/rocket.png" /> -->
+              <%= image_tag("icon/rocket.png", alt: "rocket", class: "icon-top-directory") %><br />
+							<span class="montserrat-text uppercase service-title">+500K</span>
+							<ul class="list">
+								<% i = 0
+                   first_blog = nil
+                @blogs_visits.each do |blog| %>
+                  <% if blog.total_visits > 500000 and i < 4%>
+                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "500k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <% if i == 0 
+                      first_blog = blog
+                    end %>
+                  <% i += 1
+                  end %>
+    						<% end %>
+                <a href= <%="/blogs/500k/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<div class="row">
+							<!-- <img class="icon-top-directory" src="assets/img/icon/beach.png" /> -->
+              <%= image_tag("icon/beach.png", alt: "beach", class: "icon-top-directory") %><br />
+							<span class="montserrat-text uppercase service-title">+250K</span>
+							<ul class="list">
+                <% i = 0
+                   first_blog = nil
+                @blogs_visits.each do |blog| %>
+                  <% if blog.total_visits <= 500000 and blog.total_visits > 250000 and i < 4%>
+                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "250k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <% if i == 0 
+                      first_blog = blog
+                    end %>
+                  <% i += 1
+                  end %>
+                <% end %>
+                <a href= <%="/blogs/250k/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="row">
+							<!-- <img class="icon-top-directory" src="assets/img/icon/caravan.png" /> -->
+              <%= image_tag("icon/caravan.png", alt: "caravan", class: "icon-top-directory") %><br />
+							<span class="montserrat-text uppercase service-title">United States</span>
+							<ul class="list">
+                <% i = 0
+                   first_blog = nil
+                @blogs_country.each do |blog| %>
+                  <% if blog.first_country == "United States" and i < 4%>
+                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "us", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <% if i == 0 
+                      first_blog = blog
+                    end %>
+                  <% i += 1
+                  end %>
+                <% end %>
+                <a href= <%="/blogs/us/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<div class="row">
+							<!-- <img class="icon-top-directory" src="assets/img/icon/travel.png" /> -->
+              <%= image_tag("icon/travel.png", alt: "travel", class: "icon-top-directory") %><br />
+							<span class="montserrat-text uppercase service-title">France</span>
+							<ul class="list">
+                <% i = 0
+                   first_blog = nil
+                @blogs_country.each do |blog| %>
+                  <% if blog.first_country == "France" and i < 4%>
+                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "fr", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <% if i == 0 
+                      first_blog = blog
+                    end %>
+                  <% i += 1
+                  end %>
+                <% end %>
+                <a href= <%="/blogs/fr/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12 services-left wow fadeInUp">
+				<div class="row" style="margin-bottom:50px">
+					<div class="col-md-6 col-sm-12">
+						<div class="row">
+							<!-- <img class="icon-top-directory" src="assets/img/icon/check-out.png" /> -->
+              <%= image_tag("icon/check-out.png", alt: "check-out", class: "icon-top-directory") %><br />
+							<span class="montserrat-text uppercase service-title">+50K</span>
+							<ul class="list">
+								<% i = 0
+                   first_blog = nil
+                @blogs_visits.each do |blog| %>
+                  <% if blog.total_visits <= 250000 and blog.total_visits > 50000 and i < 4%>
+                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "50k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <% if i == 0 
+                      first_blog = blog
+                    end %>
+                  <% i += 1
+                  end %>
+                <% end %>
+                <a href= <%="/blogs/50k/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<div class="row">
+							<!-- <img class="icon-top-directory" src="assets/img/icon/parasailing.png" /> -->
+              <%= image_tag("icon/parasailing.png", alt: "parasailing", class: "icon-top-directory") %><br />
+							<span class="montserrat-text uppercase service-title">+1K</span>
+							<ul class="list">
+                <% i = 0
+                   first_blog = nil
+                @blogs_visits.each do |blog| %>
+                  <% if blog.total_visits <= 50000 and blog.total_visits > 1000 and i < 4%>
+                    <li class="li-especial"><nobr><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "1k", title: blog.similar_title %></nobr><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <% if i == 0 
+                      first_blog = blog
+                    end %>
+                  <% i += 1
+                  end %>
+                <% end %>
+                <a href= <%="/blogs/1k/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="row">
+							<!-- <img class="icon-top-directory" src="assets/img/icon/sunbed.png" /> -->
+              <%= image_tag("icon/sunbed.png", alt: "sunbed", class: "icon-top-directory") %><br />
+							<span class="montserrat-text uppercase service-title">Spain</span>
+							<ul class="list">
+                <% i = 0
+                   first_blog = nil
+                @blogs_country.each do |blog| %>
+                  <% if blog.first_country == "Spain" and i < 4%>
+                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "sp", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <% if i == 0 
+                      first_blog = blog
+                    end %>
+                  <% i += 1
+                  end %>
+                <% end %>
+                <a href= <%="/blogs/sp/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<div class="row">
+							<!-- <img class="icon-top-directory" src="assets/img/icon/backpack.png" /> -->
+              <%= image_tag("icon/backpack.png", alt: "backpack", class: "icon-top-directory") %><br />
+							<span class="montserrat-text uppercase service-title">Philippines</span>
+							<ul class="list">
+                <% i = 0
+                   first_blog = nil
+                @blogs_country.each do |blog| %>
+                  <% if blog.first_country == "Philippines" and i < 4%>
+                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "ph", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <% if i == 0 
+                      first_blog = blog
+                    end %>
+                  <% i += 1
+                  end %>
+                <% end %>
+                <a href= <%="/blogs/ph/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+  </div>
+</section>
+<%= render "/welcome/newsletter" %>

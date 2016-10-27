@@ -331,6 +331,7 @@ header.main-header .logo{
 	float: left;
 	height: 100px;
 	line-height: 100px;
+	width: 16%;
 }
 
 .menu{float: right;}
@@ -1241,7 +1242,8 @@ color:#60606e;
 
 .li-especial{
 	line-height: 17px !important;
-
+	text-overflow: ellipsis;
+	text-transform: uppercase;
 }
 
 .more-info{
@@ -1272,6 +1274,10 @@ color:#60606e;
 .img-icon{
 	width: 44px;
 	padding-bottom: 5px;
+}
+
+.img-icon2 {
+	padding-top: 10px;
 }
 
 .text-align-about{
