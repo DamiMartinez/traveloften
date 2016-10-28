@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="section-title" style="text-align:left;float:left;width:100%;margin-bottom:0">
-						<span><%= @category_name %></span>
+						<span>TOP <%= @category_name %></span>
 						
 					</div>
 				</div>
@@ -38,26 +38,43 @@
               <% when "+500K" %>
                 <%= image_tag("icon/rocket.png", alt: "rocket", class: "icon-top-directory-2") %><br />
               <% when "+250K" %>
-                <%= image_tag("icon/beach.png", alt: "beach", class: "icon-top-directory-2") %><br />
-              <% when "+50K" %>
-                <%= image_tag("icon/check-out.png", alt: "check-out", class: "icon-top-directory-2") %><br />
-              <% when "+1K" %>
-                <%= image_tag("icon/parasailing.png", alt: "parasailing", class: "icon-top-directory-2") %><br />
-              <% when "United States" %>
-                <%= image_tag("icon/caravan.png", alt: "caravan", class: "icon-top-directory-2") %><br />
-              <% when "France" %>
                 <%= image_tag("icon/travel.png", alt: "travel", class: "icon-top-directory-2") %><br />
+              <% when "+50K" %>
+                <%= image_tag("icon/caravan.png", alt: "caravan", class: "icon-top-directory-2") %><br />
+              <% when "+1K" %>
+                <%= image_tag("icon/backpack.png", alt: "backpack", class: "icon-top-directory-2") %><br />
+              <% when "United States" %>
+                <%= image_tag("icon/statue.png", alt: "statue", class: "icon-top-directory-2") %><br />
+              <% when "France" %>
+                <%= image_tag("icon/building.png", alt: "building", class: "icon-top-directory-2") %><br />
               <% when "Spain" %>
                 <%= image_tag("icon/sunbed.png", alt: "sunbed", class: "icon-top-directory-2") %><br />
               <% when "Philippines" %>
-                <%= image_tag("icon/backpack.png", alt: "backpack", class: "icon-top-directory-2") %><br />
+                <%= image_tag("icon/beach.png", alt: "beach", class: "icon-top-directory-2") %><br />
               <% end %>
 							<p class="montserrat-text uppercase service-title directori-size"><%= @blogs_category.length %> Blogs</p>
 							<ul class="list">
-                <% i = 0
+                <% i = 1
                 @blogs_category.each do |blog| %>
-                  <% if i < (@blogs_category.length/2)%>
-                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "500k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                  <% if i.odd? %>
+                  <% case @category_name %>
+                    <% when "United States" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "us", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "France" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "fr", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "Spain" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "sp", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "Philippines" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "ph", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "+500K" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "500k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "+250K" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "250k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "+50K" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "50k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "+1K" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "1k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% end %>                    
                     <% if @category_name == "United States" or @category_name == "France" or @category_name == "Spain" or @category_name == "Philippines"%>
                       <% if blog.total_traffic_first_country < 1000 %>
                         <%= blog.total_traffic_first_country %>
@@ -72,9 +89,9 @@
                       <% end %>
                     <% end %>
                     </span></li>
-                  <% i += 1
-                  end %>
-                <% end %>							
+                  <% end %>
+                <% i += 1 
+                end %>							
 							</ul>
 						</div>
 					</div>
@@ -82,12 +99,29 @@
 						<div class="row">
 							
 							
-							<ul class="list">
-                <% i = 0
+							<ul class="list second-column">
+                <% i = 1
                 @blogs_category.each do |blog| %>
-                  <% if i >= (@blogs_category.length/2)%>
-                    <li class="li-especial"><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "500k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
-                       <% if @category_name == "United States" or @category_name == "France" or @category_name == "Spain" or @category_name == "Philippines"%>
+                  <% if i.even? %>
+                    <% case @category_name %>
+                    <% when "United States" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "us", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "France" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "fr", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "Spain" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "sp", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "Philippines" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "ph", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "+500K" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "500k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "+250K" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "250k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "+50K" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "50k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% when "+1K" %>
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "1k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;">
+                    <% end %>
+                    <% if @category_name == "United States" or @category_name == "France" or @category_name == "Spain" or @category_name == "Philippines"%>
                       <% if blog.total_traffic_first_country < 1000 %>
                         <%= blog.total_traffic_first_country %>
                       <% else %>
@@ -124,12 +158,12 @@
                 <% if @category_name == "United States" or @category_name == "France" or @category_name == "Spain" or @category_name == "Philippines"%>
 								  <li style="text-transform: uppercase;"> VISITS FROM <%= @category_name%><br><span style="font-size:30px; color:#7beec7;     font-weight: 700;"><%= @blog.total_traffic_first_country/1000.0 %>K</span></li>
                 <% else %>
-                  <li > TOTAL VISITS<br><span style="font-size:30px; color:#7beec7;     font-weight: 700;">496.1K</span></li>
+                  <li > TOTAL VISITS<br><span style="font-size:30px; color:#7beec7;     font-weight: 700;"><%= @blog.total_visits/1000.0 %>K</span></li>
                 <% end %>
 								<li><!-- <img src="assets/img/bus.png" style="padding-top: 10px;"  class="img-icon" /> -->
                 <%= image_tag("bus.png", alt: "bus", class: "img-icon img-icon2") %>        
                 </li>
-								<li > FACEBOOK<br><span style="font-size:30px; color:#7beec7;     font-weight: 700;">416188</span></li>
+								<li > PAGE PER VIEWS<br><span style="font-size:30px; color:#7beec7;     font-weight: 700;"><%= @blog.page_per_visit %></span></li>
 								
 							</ul>
 						</div>
@@ -140,7 +174,29 @@
 								<li><!-- <img src="assets/img/traffic-light.png" class="img-icon" /> -->
                 <%= image_tag("traffic-light.png", alt: "traffic-light", class: "img-icon") %>        
                 </li>
-								<li > BEST TRAFFIC SOURCES<br><span style="font-size:30px; font-weight: 700; color:#7beec7;">80.10% search</span></li>
+								<li > BEST TRAFFIC SOURCE<br><span style="font-size:30px; font-weight: 700; color:#7beec7;">
+                <% if @blog.social != nil and @blog.search != nil and @blog.referral != nil
+                  direct = 1.0 - [@blog.social, @blog.search, @blog.referral].sum
+                  best_traffic = [@blog.social, @blog.paid_search, @blog.search, @blog.referral, direct]
+                  max_index = best_traffic.index(best_traffic.max) 
+                else
+                  max_index = 5
+                end
+                case max_index %>
+                <% when 0 %>
+                  Social
+                <% when 1 %>
+                  Paid Search
+                <% when 2 %>
+                  Search
+                <% when 3 %>
+                  Referral
+                <% when 4 %>
+                  Direct
+                <% when 5 %>
+                  -
+                <% end %>    
+                </span></li>
 								<li><!-- <img src="assets/img/stopwatch.png" style="padding-top: 10px;" class="img-icon" /> -->
                 <%= image_tag("stopwatch.png", alt: "stopwatch", class: "img-icon img-icon2") %>        
                 </li>

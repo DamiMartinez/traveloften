@@ -174,7 +174,7 @@ ul.list li{
 ul.list li:last-child{margin-bottom: 0}
 ul.list li:before{
 	font-family: "Ionicons";
-	content: '\f374';
+	content: '\f219';
 	position: absolute;
 	left: 0;
 	color:#7beec7;
@@ -1291,4 +1291,8 @@ color:#60606e;
 
 #bloggers-title{
 text-align: left;
+}
+
+.second-column {
+	padding-top: 160px;
 }
