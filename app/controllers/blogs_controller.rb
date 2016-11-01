@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find_by(similar_title: params[:title]+'.com')
+    @blog = Blog.find_by(similar_title_alt: params[:title])
     # @blog = params[:title]
     case params[:category]
     when "500k"
@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
       @blogs_category = Blog.where("total_visits <= 250000 AND total_visits > 50000").order(total_visits: :desc)
     when "1k"
       @category_name = "+1K" 
-      @blogs_category = Blog.where("total_visits <= 500000 AND total_visits > 1000").order(total_visits: :desc)
+      @blogs_category = Blog.where("total_visits <= 50000 AND total_visits > 1000").order(total_visits: :desc)
     when "us"
       @category_name = "United States" 
       @blogs_category = Blog.where("first_country = 'United States' ").order(total_traffic_first_country: :desc)

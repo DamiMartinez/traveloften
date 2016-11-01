@@ -5,20 +5,20 @@
 						<div class="row">
 							<!-- <img class="icon-top-directory" src="assets/img/icon/rocket.png" /> -->
               <%= image_tag("icon/rocket.png", alt: "rocket", class: "icon-top-directory") %><br />
-							<span class="montserrat-text uppercase service-title">+500K</span>
+							<span class="montserrat-text uppercase service-title">+500K VISITS</span>
 							<ul class="list">
 								<% i = 1
                    first_blog = nil
                 @blogs_visits.each do |blog| %>
                   <% if blog.total_visits > 500000 and i < 5 %>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "500k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "500k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
                   <% i += 1
                   end %>
     						<% end %>
-                <a href= <%="/blogs/500k/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+                <a href= <%="/blogs/500k/#{first_blog.similar_title_alt}" %> ><p class="more-info"> see more</p></a>
 							</ul>
 						</div>
 					</div>
@@ -26,20 +26,20 @@
 						<div class="row">
 							<!-- <img class="icon-top-directory" src="assets/img/icon/beach.png" /> -->
               <%= image_tag("icon/travel.png", alt: "travel", class: "icon-top-directory") %><br />
-							<span class="montserrat-text uppercase service-title">+250K</span>
+							<span class="montserrat-text uppercase service-title">+250K VISITS</span>
 							<ul class="list">
                 <% i = 1
                    first_blog = nil
                 @blogs_visits.each do |blog| %>
                   <% if blog.total_visits <= 500000 and blog.total_visits > 250000 and i < 5%>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "250k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "250k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
                   <% i += 1
                   end %>
                 <% end %>
-                <a href= <%="/blogs/250k/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+                <a href= <%="/blogs/250k/#{first_blog.similar_title_alt}" %> ><p class="more-info"> see more</p></a>
 							</ul>
 						</div>
 					</div>
@@ -55,14 +55,14 @@
                    first_blog = nil
                 @blogs_country.each do |blog| %>
                   <% if blog.first_country == "United States" and i < 5%>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "us", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "us", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
                   <% i += 1
                   end %>
                 <% end %>
-                <a href= <%="/blogs/us/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+                <a href= <%="/blogs/us/#{first_blog.similar_title_alt}" %> ><p class="more-info"> see more</p></a>
 							</ul>
 						</div>
 					</div>
@@ -76,14 +76,14 @@
                    first_blog = nil
                 @blogs_country.each do |blog| %>
                   <% if blog.first_country == "France" and i < 5%>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "fr", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "fr", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
                   <% i += 1
                   end %>
                 <% end %>
-                <a href= <%="/blogs/fr/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+                <a href= <%="/blogs/fr/#{first_blog.similar_title_alt}" %> ><p class="more-info"> see more</p></a>
 							</ul>
 						</div>
 					</div>
@@ -95,20 +95,20 @@
 						<div class="row">
 							<!-- <img class="icon-top-directory" src="assets/img/icon/check-out.png" /> -->
               <%= image_tag("icon/caravan.png", alt: "caravan", class: "icon-top-directory") %><br />
-							<span class="montserrat-text uppercase service-title">+50K</span>
+							<span class="montserrat-text uppercase service-title">+50K VISITS</span>
 							<ul class="list">
 								<% i = 1
                    first_blog = nil
                 @blogs_visits.each do |blog| %>
                   <% if blog.total_visits <= 250000 and blog.total_visits > 50000 and i < 5%>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "50k", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "50k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
                   <% i += 1
                   end %>
                 <% end %>
-                <a href= <%="/blogs/50k/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+                <a href= <%="/blogs/50k/#{first_blog.similar_title_alt}" %> ><p class="more-info"> see more</p></a>
 							</ul>
 						</div>
 					</div>
@@ -116,20 +116,20 @@
 						<div class="row">
 							<!-- <img class="icon-top-directory" src="assets/img/icon/parasailing.png" /> -->
               <%= image_tag("icon/backpack.png", alt: "backpack", class: "icon-top-directory") %><br />
-							<span class="montserrat-text uppercase service-title">+1K</span>
+							<span class="montserrat-text uppercase service-title">+1K VISITS</span>
 							<ul class="list">
                 <% i = 1
                    first_blog = nil
                 @blogs_visits.each do |blog| %>
                   <% if blog.total_visits <= 50000 and blog.total_visits > 1000 and i < 5 %>
-                    <li class="li-especial"><nobr><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "1k", title: blog.similar_title %></nobr><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <li class="li-especial"><nobr><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "1k", title: blog.similar_title_alt %></nobr><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
                   <% i += 1
                   end %>
                 <% end %>
-                <a href= <%="/blogs/1k/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+                <a href= <%="/blogs/1k/#{first_blog.similar_title_alt}" %> ><p class="more-info"> see more</p></a>
 							</ul>
 						</div>
 					</div>
@@ -145,14 +145,14 @@
                    first_blog = nil
                 @blogs_country.each do |blog| %>
                   <% if blog.first_country == "Spain" and i < 5 %>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "sp", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "sp", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
                     <% if i == 1
                       first_blog = blog
                     end %>
                   <% i += 1
                   end %>
                 <% end %>
-                <a href= <%="/blogs/sp/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+                <a href= <%="/blogs/sp/#{first_blog.similar_title_alt}" %> ><p class="more-info"> see more</p></a>
 							</ul>
 						</div>
 					</div>
@@ -166,14 +166,14 @@
                    first_blog = nil
                 @blogs_country.each do |blog| %>
                   <% if blog.first_country == "Philippines" and i < 5 %>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "ph", title: blog.similar_title %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "ph", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
                   <% i += 1
                   end %>
                 <% end %>
-                <a href= <%="/blogs/ph/#{first_blog.similar_title}" %> ><p class="more-info"> see more</p></a>
+                <a href= <%="/blogs/ph/#{first_blog.similar_title_alt}" %> ><p class="more-info"> see more</p></a>
 							</ul>
 						</div>
 					</div>
