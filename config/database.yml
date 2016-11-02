@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: traveloften_production
-  username: traveloften
-  password: <%= ENV['traveloften_DATABASE_PASSWORD'] %>
+  username: root
+  password: 'traveloftenPie2re!'
+  host: localhost
