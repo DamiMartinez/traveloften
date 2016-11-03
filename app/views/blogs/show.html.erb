@@ -23,7 +23,7 @@
                 i = i+1 %>
               <% end %>
             <% end %>
-						<p class="description-titulo-blog">Blog de viajes con experiencias, visitas recomendadas y los mejores consejos para planificar tu viaje turístico, con fotos y vídeos.</p>
+				<!-- 		<p class="description-titulo-blog">Blog de viajes con experiencias, visitas recomendadas y los mejores consejos para planificar tu viaje turístico, con fotos y vídeos.</p> -->
 					</div>
 				</div>		
 				
@@ -154,7 +154,7 @@
 				</div><!-- end col -->
 
 				<div class="col-md-6">
-					<div id="map" style="width:100%"><%= image_tag("screenshot/#{@blog.similar_title_alt}.png", alt: "stock-image") %></div>
+					<div id="map" style="width:100%"><%= link_to image_tag("screenshot/#{@blog.similar_title_alt}.png", alt: "stock-image"), @blog.site_url, target: "_blank" %></div>
 				</div>
 				<div class="row">
 				<div class="col-md-6 wow fadeInUp lista-info">
