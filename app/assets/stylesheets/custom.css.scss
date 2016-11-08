@@ -1304,8 +1304,16 @@ text-align: left;
 	content: none;
 }
 
+.row-margin {
+	margin-bottom: 50px;
+}
+
 @media only screen and (max-width: 991px) { 
 	.section-title {width: 100%; text-align: center;}
 	ul.list li:before {position: relative;}
 	.alt-section {margin-top: 50px;}
+	body {font-size: 20px;}
+	header.main-header .logo {width:30%;}
+	.icon-top-directory {margin-top: 50px;}
+	.row-margin {margin-bottom: 0px;}
 }
