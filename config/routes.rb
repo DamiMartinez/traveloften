@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # get '/blogs/:title', to: 'blogs#show'
   get '/blogs/:category/:title', to: 'blogs#show'
 
-  get 'welcome/about', to:'welcome#about' 
+  get 'welcome/about', to:'welcome#about'
+
+  post 'welcome', to:'welcome#newsletter'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
