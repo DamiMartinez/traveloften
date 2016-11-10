@@ -164,7 +164,12 @@
 								<li><!-- <img src="assets/img/group.png"  class="img-icon" /> -->
                 <%= image_tag("group.png", alt: "group", class: "img-icon") %></li>
                 <% if @category_name == "United States" or @category_name == "France" or @category_name == "Spain" or @category_name == "Philippines"%>
-								  <li style="text-transform: uppercase;"> VISITS FROM <%= @category_name%><br><span style="font-size:30px; color:#7beec7;     font-weight: 700;"><%= @blog.total_traffic_first_country/1000 %>K</span></li>
+								  <li style="text-transform: uppercase;"> VISITS FROM <%= @category_name%><br><span style="font-size:30px; color:#7beec7;     font-weight: 700;">
+                  <% if @blog.total_traffic_first_country >= 1000 %>
+                    <%= @blog.total_traffic_first_country/1000 %>K</span></li>
+                  <% else %>
+                    <%= @blog.total_traffic_first_country %></span></li>
+                  <% end %>
                 <% else %>
                   <li > TOTAL VISITS<br><span style="font-size:30px; color:#7beec7;     font-weight: 700;"><%= @blog.total_visits/1000 %>K</span></li>
                 <% end %>
@@ -262,7 +267,12 @@
                 <li><!-- <img src="assets/img/group.png"  class="img-icon" /> -->
                 <%= image_tag("group.png", alt: "group", class: "img-icon") %></li>
                 <% if @category_name == "United States" or @category_name == "France" or @category_name == "Spain" or @category_name == "Philippines"%>
-                  <li style="text-transform: uppercase;"> VISITS FROM <%= @category_name%><br><span style="font-size:30px; color:#7beec7;     font-weight: 700;"><%= @blog.total_traffic_first_country/1000 %>K</span></li>
+                  <li style="text-transform: uppercase;"> VISITS FROM <%= @category_name%><br><span style="font-size:30px; color:#7beec7;     font-weight: 700;">
+                  <% if @blog.total_traffic_first_country >= 1000 %>
+                    <%= @blog.total_traffic_first_country/1000 %>K</span></li>
+                  <% else %>
+                    <%= @blog.total_traffic_first_country %></span></li>
+                  <% end %>
                 <% else %>
                   <li > TOTAL VISITS<br><span style="font-size:30px; color:#7beec7;     font-weight: 700;"><%= @blog.total_visits/1000 %>K</span></li>
                 <% end %>
