@@ -363,21 +363,21 @@
                 @blogs_category.each do |blog| %>
                   <% case @category_name %>
                     <% when "United States" %>
-                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "us", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;">
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "us", title: blog.similar_title_alt %><br><span class="visits-text"
                     <% when "France" %>
-                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "fr", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;">
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "fr", title: blog.similar_title_alt %><br><span class="visits-text">
                     <% when "Spain" %>
-                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "sp", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;">
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "sp", title: blog.similar_title_alt %><br><span class="visits-text">
                     <% when "Philippines" %>
-                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "ph", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;">
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "ph", title: blog.similar_title_alt %><br><span class="visits-text">
                     <% when "+500K" %>
-                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "500k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;">
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "500k", title: blog.similar_title_alt %><br><span class="visits-text">
                     <% when "+250K" %>
-                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "250k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;">
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "250k", title: blog.similar_title_alt %><br><span class="visits-text">
                     <% when "+50K" %>
-                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "50k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;">
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "50k", title: blog.similar_title_alt %><br><span class="visits-text">
                     <% when "+1K" %>
-                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "1k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;">
+                      <li class="li-especial"><%= "#{i}. " %><%= link_to blog.similar_title, controller: "blogs", action: "show", category: "1k", title: blog.similar_title_alt %><br><span class="visits-text">
                     <% end %>                    
                     <% if @category_name == "United States" or @category_name == "France" or @category_name == "Spain" or @category_name == "Philippines"%>
                       <% if blog.total_traffic_first_country < 1000 %>

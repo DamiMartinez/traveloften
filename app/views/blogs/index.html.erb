@@ -11,7 +11,7 @@
                    first_blog = nil
                 @blogs_visits.each do |blog| %>
                   <% if blog.total_visits > 500000 and i < 5 %>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "500k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "500k", title: blog.similar_title_alt %><br><span class="visits-text"><%= blog.total_visits/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
@@ -32,7 +32,7 @@
                    first_blog = nil
                 @blogs_visits.each do |blog| %>
                   <% if blog.total_visits <= 500000 and blog.total_visits > 250000 and i < 5%>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "250k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "250k", title: blog.similar_title_alt %><br><span class="visits-text"><%= blog.total_visits/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
@@ -55,7 +55,7 @@
                    first_blog = nil
                 @blogs_country.each do |blog| %>
                   <% if blog.first_country == "United States" and i < 5%>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "us", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "us", title: blog.similar_title_alt %><br><span class="visits-text"><%= blog.total_traffic_first_country/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
@@ -76,7 +76,7 @@
                    first_blog = nil
                 @blogs_country.each do |blog| %>
                   <% if blog.first_country == "France" and i < 5%>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "fr", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "fr", title: blog.similar_title_alt %><br><span class="visits-text"><%= blog.total_traffic_first_country/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
@@ -101,7 +101,7 @@
                    first_blog = nil
                 @blogs_visits.each do |blog| %>
                   <% if blog.total_visits <= 250000 and blog.total_visits > 50000 and i < 5%>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "50k", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "50k", title: blog.similar_title_alt %><br><span class="visits-text"><%= blog.total_visits/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
@@ -122,7 +122,7 @@
                    first_blog = nil
                 @blogs_visits.each do |blog| %>
                   <% if blog.total_visits <= 50000 and blog.total_visits > 1000 and i < 5 %>
-                    <li class="li-especial"><nobr><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "1k", title: blog.similar_title_alt %></nobr><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_visits/1000 %>K</span></li>
+                    <li class="li-especial"><nobr><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "1k", title: blog.similar_title_alt %></nobr><br><span class="visits-text"><%= blog.total_visits/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>
@@ -145,7 +145,7 @@
                    first_blog = nil
                 @blogs_country.each do |blog| %>
                   <% if blog.first_country == "Spain" and i < 5 %>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "sp", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "sp", title: blog.similar_title_alt %><br><span class="visits-text"><%= blog.total_traffic_first_country/1000 %>K</span></li>
                     <% if i == 1
                       first_blog = blog
                     end %>
@@ -166,7 +166,7 @@
                    first_blog = nil
                 @blogs_country.each do |blog| %>
                   <% if blog.first_country == "Philippines" and i < 5 %>
-                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "ph", title: blog.similar_title_alt %><br><span style="font-size:13px; color:#ff5f00;"><%= blog.total_traffic_first_country/1000 %>K</span></li>
+                    <li class="li-especial"><%= link_to "#{i}. #{blog.similar_title}", controller: "blogs", action: "show", category: "ph", title: blog.similar_title_alt %><br><span class="visits-text"><%= blog.total_traffic_first_country/1000 %>K</span></li>
                     <% if i == 1 
                       first_blog = blog
                     end %>

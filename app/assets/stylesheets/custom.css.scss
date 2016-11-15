@@ -590,7 +590,7 @@ height: 1px;
 @media (max-width: 991px) {
 	.site-hero ul.slides{height: 750px;}
 	.agency{margin-top: 30px;}
-	.agency img{margin-bottom: 30px;}
+	.agency img{margin-bottom: 100px;}
 	.agency .section-title{margin: 0 auto;text-align: center;}
 	.agency p{text-align: center;}
 }
@@ -1308,12 +1308,43 @@ text-align: left;
 	margin-bottom: 50px;
 }
 
+.title-travel-blog-directory {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+.visits-text {
+	font-size:13px; 
+	color:#ff5f00;
+}
+
 @media only screen and (max-width: 991px) { 
-	.section-title {width: 100%; text-align: center;}
+	.section-title {width: 100%;}
+	.section-title span {font-size: 51px;}
+	.section-title span:after {content: none;}
+	.section-title-alt span {font-size: 58px;}
 	ul.list li:before {position: relative;}
 	.alt-section {margin-top: 50px;}
-	body {font-size: 20px;}
-	header.main-header .logo {width:30%;}
-	.icon-top-directory {margin-top: 50px;}
+	body {font-size: 30px;}
+	header.main-header .logo {width:42%;}
+	.icon-top-directory {margin-top: 100px; width:25%;}
 	.row-margin {margin-bottom: 0px;}
+	.site-hero {height: 700px;}
+	.site-hero ul.slides li {top: 34%;}
+	.title-travel-blog-directory {font-size: 32px; padding-bottom: 15px;}
+	.site-hero .big-title {font-size: 60px; width: 73%;}
+	.montserrat-text{font-size: 32px;}
+	.text-survey {font-size: 30px; line-height: 1.8;}
+	.btn {min-width: 350px; height: 80px; font-size: 28px; padding-top: 10px;}
+	.services .services-left .service-title {font-size: 44px;}
+	.li-especial {line-height: 1.5 !important;}
+	.visits-text {font-size: 23px;}
+	.more-info {font-size: 23px; margin-left: 20px;}
+	.text-align-about {line-height: 1.5;}
+	.section-title p {line-height: 1.5; text-align: justify;}
+	.section-title span {margin-top: 30px;}
+	.title-blog-directory {font-size: 30px;}
+	.section-title .hash-ranking {font-size: 30px;}
+	.img-icon {width:22%;}
+	.no-list {font-size: 26px;}
 }
