@@ -576,7 +576,7 @@ height: 1px;
 	width: 100%;
 	height: auto;
 	float: left;
-	margin-top: -300px;
+	margin-top: 80px;
 }
 
 .agency p{
@@ -615,8 +615,13 @@ height: 1px;
 	color:#999999;
 	
 }
+
+.services-custom {
+	margin-top: -300px;
+}
 @media (max-width: 991px) {
 	.services .services-left{text-align: center;margin-bottom: 50px;}
+	.services-custom {margin-top: 0px;}
 }
 
 
