@@ -1324,6 +1324,29 @@ text-align: left;
 	color:#ff5f00;
 }
 
+.slider-col {
+	margin-top: 100px;
+}
+
+.slider-col-resp {
+	margin-top: 160px;
+}
+
+.slider-arrow {
+	font-size: 54px;
+	color: #7beec7;
+}
+
+.screenshot-img {
+	width:120%; 
+	margin-left:-45px;
+}
+
+@media only screen and (min-width: 1200px) { 
+	.screenshot-img {width:120%; margin-left:-60px;}
+	.slider-col {margin-top: 110px;}
+}
+
 @media only screen and (max-width: 991px) { 
 	.section-title {width: 100%;}
 	.section-title span {font-size: 51px;}

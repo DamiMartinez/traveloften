@@ -152,10 +152,65 @@
 
 					
 				</div><!-- end col -->
-
-				<div class="col-md-6">
-					<div id="map" style="width:100%"><%= link_to image_tag("screenshot/#{@blog.similar_title_alt}.png", alt: "stock-image"), @blog.site_url, target: "_blank" %></div>
+        <div class="col-md-1 slider-col">
+          <% i = 0
+            prev_blog = @blogs_category[i].similar_title_alt
+            @blogs_category.each do |blog| %>
+              <% if blog == @blog and i > 0
+                prev_blog = @blogs_category[i-1].similar_title_alt
+              end %>
+            <% i = i+1
+            end %>
+              <% case @category_name %>
+                <% when "United States" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "us", title: prev_blog %></i>
+                <% when "France" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "fr", title: prev_blog %></i>
+                <% when "Spain" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "sp", title: prev_blog %></i>
+                <% when "Philippines" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "ph", title: prev_blog %></i>
+                <% when "+500K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "500k", title: prev_blog %></i>
+                <% when "+250K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "250k", title: prev_blog %></i>
+                <% when "+50K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "50k", title: prev_blog %></i>
+                <% when "+1K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "1k", title: prev_blog %></i>
+              <% end %> 
+        </div>
+				<div class="col-md-4">
+					<div id="map" class="screenshot-img"><%= link_to image_tag("screenshot/#{@blog.similar_title_alt}.png", alt: "stock-image"), @blog.site_url, target: "_blank" %></div>
 				</div>
+        <div class="col-md-1 slider-col">
+          <% i = 0
+            next_blog = @blogs_category[@blogs_category.length-1].similar_title_alt
+            @blogs_category.each do |blog| %>
+              <% if blog == @blog and i < @blogs_category.length-1
+                next_blog = @blogs_category[i+1].similar_title_alt
+              end %>
+            <% i = i+1
+            end %>
+              <% case @category_name %>
+                <% when "United States" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "us", title: next_blog %></i>
+                <% when "France" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "fr", title: next_blog %></i>
+                <% when "Spain" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "sp", title: next_blog %></i>
+                <% when "Philippines" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "ph", title: next_blog %></i>
+                <% when "+500K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "500k", title: next_blog %></i>
+                <% when "+250K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "250k", title: next_blog %></i>
+                <% when "+50K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "50k", title: next_blog %></i>
+                <% when "+1K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "1k", title: next_blog %></i>
+              <% end %> 
+        </div>
 				<div class="row">
 				<div class="col-md-6 wow fadeInUp lista-info">
 					<div class="col-md-6">
@@ -254,9 +309,66 @@
             <% end %>
         <!--    <p class="description-titulo-blog">Blog de viajes con experiencias, visitas recomendadas y los mejores consejos para planificar tu viaje turístico, con fotos y vídeos.</p> -->
           </div>
-        </div>    
-        <div class="col-md-6">
-          <div id="map" style="width:100%"><%= link_to image_tag("screenshot/#{@blog.similar_title_alt}.png", alt: "stock-image"), @blog.site_url, target: "_blank" %></div>
+        </div>
+        <div class="col-sm-1 col-xs-1 slider-col-resp">
+          <% i = 0
+            prev_blog = @blogs_category[i].similar_title_alt
+            @blogs_category.each do |blog| %>
+              <% if blog == @blog and i > 0
+                prev_blog = @blogs_category[i-1].similar_title_alt
+              end %>
+            <% i = i+1
+            end %>
+              <% case @category_name %>
+                <% when "United States" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "us", title: prev_blog %></i>
+                <% when "France" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "fr", title: prev_blog %></i>
+                <% when "Spain" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "sp", title: prev_blog %></i>
+                <% when "Philippines" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "ph", title: prev_blog %></i>
+                <% when "+500K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "500k", title: prev_blog %></i>
+                <% when "+250K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "250k", title: prev_blog %></i>
+                <% when "+50K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "50k", title: prev_blog %></i>
+                <% when "+1K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-left slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "1k", title: prev_blog %></i>
+              <% end %> 
+        </div>
+        <div class="col-sm-10 col-xs-10">
+          <div id="map" style="width:100%;">
+          <%= link_to image_tag("screenshot/#{@blog.similar_title_alt}.png", alt: "stock-image"), @blog.site_url, target: "_blank" %></div>
+        </div>
+         <div class="col-sm-1 col-xs-1 slider-col-resp">
+          <% i = 0
+            next_blog = @blogs_category[@blogs_category.length-1].similar_title_alt
+            @blogs_category.each do |blog| %>
+              <% if blog == @blog and i < @blogs_category.length-1
+                next_blog = @blogs_category[i+1].similar_title_alt
+              end %>
+            <% i = i+1
+            end %>
+              <% case @category_name %>
+                <% when "United States" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "us", title: next_blog %></i>
+                <% when "France" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "fr", title: next_blog %></i>
+                <% when "Spain" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "sp", title: next_blog %></i>
+                <% when "Philippines" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "ph", title: next_blog %></i>
+                <% when "+500K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "500k", title: next_blog %></i>
+                <% when "+250K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "250k", title: next_blog %></i>
+                <% when "+50K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "50k", title: next_blog %></i>
+                <% when "+1K" %>
+                  <%= link_to '<i class="icon ion-ios-arrow-right slider-arrow"></i>'.html_safe, controller: "blogs", action: "show", category: "1k", title: next_blog %></i>
+              <% end %> 
         </div>
       </div>
       <div class="row">
