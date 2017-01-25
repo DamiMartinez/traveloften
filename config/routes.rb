@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'welcome/about', to:'welcome#about'
 
+  get '/chollos/madrid', :to => redirect('/tabla_chollos/madrid.html')
+
   post 'welcome', to:'welcome#newsletter'
 
   # Example of regular route:
