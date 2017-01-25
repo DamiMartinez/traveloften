@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 
   get 'welcome/about', to:'welcome#about'
 
-  get '/chollos/madrid', :to => redirect('/tabla_chollos/madrid.html')
+  get '/chollos/madrid', :to => redirect('/chollos/madrid.html')
+  get '/chollos/barcelona', :to => redirect('/chollos/barcelona.html')
+  get '/chollos/alicante', :to => redirect('/chollos/alicante.html')
+  get '/chollos/malaga', :to => redirect('/chollos/malaga.html')
 
   post 'welcome', to:'welcome#newsletter'
 
